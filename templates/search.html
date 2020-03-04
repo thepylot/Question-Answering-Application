@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <title>QA Application</title>
+</head>
+<body>
+    <form method="POST" onsubmit="submitFn(this, event);">
+        {% csrf_token %}
+        <div class="search-wrapper">
+            <div class="input-holder">
+                <input type="text" id="question" class="search-input" placeholder="Ask me anything.." />
+                <button class="search-icon" onclick="searchToggle(this, event);"><span></span></button>
+            </div>
+            <span class="close" onclick="searchToggle(this, event);"></span>
+            <div class="result-container">
+            </div>
+        </div>
+    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
